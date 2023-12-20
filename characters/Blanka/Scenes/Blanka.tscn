@@ -1,7 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://bthx1tdgihwv7"]
+[gd_scene load_steps=20 format=3 uid="uid://bthx1tdgihwv7"]
 
 [ext_resource type="Texture2D" uid="uid://seo7uf3gj3g1" path="res://characters/Blanka/Assets/Idle.png" id="1_cw1kh"]
+[ext_resource type="Texture2D" uid="uid://dd2qfw3jh6i22" path="res://characters/Blanka/Assets/Block.png" id="1_i3dn0"]
 [ext_resource type="Texture2D" uid="uid://b3k4dwyp37jcl" path="res://characters/Blanka/Assets/Walking.png" id="2_6rt11"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss7di"]
+atlas = ExtResource("1_i3dn0")
+region = Rect2(0, 0, 58, 90)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l8k2k"]
 atlas = ExtResource("1_cw1kh")
@@ -63,6 +68,14 @@ region = Rect2(0, 0, 70, 93)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ss7di")
+}],
+"loop": true,
+"name": &"Block",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_l8k2k")
 }, {
 "duration": 1.0,
@@ -121,4 +134,4 @@ texture_filter = 1
 position = Vector2(271, 260)
 sprite_frames = SubResource("SpriteFrames_743e1")
 animation = &"Walk"
-frame_progress = 0.496718
+frame_progress = 0.00179778

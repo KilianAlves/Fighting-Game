@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bthx1tdgihwv7"]
+[gd_scene load_steps=21 format=3 uid="uid://bthx1tdgihwv7"]
 
 [ext_resource type="Texture2D" uid="uid://seo7uf3gj3g1" path="res://characters/Blanka/Assets/Idle.png" id="1_cw1kh"]
 [ext_resource type="Texture2D" uid="uid://dd2qfw3jh6i22" path="res://characters/Blanka/Assets/Block.png" id="1_i3dn0"]
@@ -127,11 +127,19 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0feo2"]
+size = Vector2(57.5625, 87.25)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(271, 260)
 sprite_frames = SubResource("SpriteFrames_743e1")
-animation = &"Walk"
-frame_progress = 0.00179778
+animation = &"Idle"
+frame_progress = 0.904518
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(271.219, 260.625)
+shape = SubResource("RectangleShape2D_0feo2")
+debug_color = Color(0.360784, 0.482353, 1, 0.309804)

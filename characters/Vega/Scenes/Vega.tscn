@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqdp2rtn8bd04"]
+[gd_scene load_steps=22 format=3 uid="uid://bqdp2rtn8bd04"]
 
 [ext_resource type="Texture2D" uid="uid://bsdj1m5h5c6mj" path="res://characters/Vega/Assets/Crouch.png" id="1_lc5me"]
 [ext_resource type="Texture2D" uid="uid://qugks53amxll" path="res://characters/Vega/Assets/Hidle.png" id="2_6sdqr"]
@@ -38,13 +38,13 @@ region = Rect2(130, 0, 65, 122)
 atlas = ExtResource("3_3ptay")
 region = Rect2(195, 0, 65, 122)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7rcnp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgv21"]
 atlas = ExtResource("4_x586m")
-region = Rect2(0, 0, 92, 94)
+region = Rect2(10, 0, 118, 94)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k5uwv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lq5q"]
 atlas = ExtResource("4_x586m")
-region = Rect2(92, 0, 92, 94)
+region = Rect2(128, 0, 118, 94)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmvoh"]
 atlas = ExtResource("4_rty1c")
@@ -105,10 +105,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7rcnp")
+"texture": SubResource("AtlasTexture_fgv21")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k5uwv")
+"texture": SubResource("AtlasTexture_4lq5q")
 }],
 "loop": true,
 "name": &"L.Punch",
@@ -132,10 +132,17 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_567ah"]
+size = Vector2(40, 95)
+
 [node name="Vega" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_wbogb")
-animation = &"Jump"
-frame_progress = 0.921442
+animation = &"L.Punch"
+frame_progress = 0.452796
+
+[node name="VegaCollision" type="CollisionShape2D" parent="."]
+position = Vector2(3, 9.5)
+shape = SubResource("RectangleShape2D_567ah")

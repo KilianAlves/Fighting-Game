@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://bqdp2rtn8bd04"]
+[gd_scene load_steps=24 format=3 uid="uid://bqdp2rtn8bd04"]
 
+[ext_resource type="Script" path="res://characters/Vega/Scripts/Vega.gd" id="1_8s0v1"]
 [ext_resource type="Texture2D" uid="uid://bsdj1m5h5c6mj" path="res://characters/Vega/Assets/Crouch.png" id="1_lc5me"]
 [ext_resource type="Texture2D" uid="uid://qugks53amxll" path="res://characters/Vega/Assets/Hidle.png" id="2_6sdqr"]
 [ext_resource type="Texture2D" uid="uid://gn65khb4tbx4" path="res://characters/Vega/Assets/Jump.png" id="3_3ptay"]
@@ -139,12 +140,13 @@ size = Vector2(40, 95)
 size = Vector2(47, 8.5)
 
 [node name="Vega" type="CharacterBody2D"]
+script = ExtResource("1_8s0v1")
 
 [node name="VegaAnimations" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_wbogb")
 animation = &"L.Punch"
-frame_progress = 0.511294
+frame_progress = 0.278669
 
 [node name="VegaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(3, 9.5)

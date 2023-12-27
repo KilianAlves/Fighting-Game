@@ -16,8 +16,6 @@ func SpawnChosenCharacters():
 
 	givenOpponent.position.x = 890
 	givenOpponent.position.y = 400
-	var sripte = givenOpponent._animation_player
-	sripte.flip_h = true
 
 	
 	call_deferred("add_child", givenOpponent)

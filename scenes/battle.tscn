@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy4lmrbghqsvr"]
+
+[ext_resource type="Texture2D" uid="uid://7h0gs55yno5n" path="res://asset/background/StreetFighterII-SMS-USAGuile.png" id="1_njick"]
+[ext_resource type="Script" path="res://scripts/battle.gd" id="1_vrh7i"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_vrh7i")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_njick")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D"]
+position = Vector2(576.625, 658)
+constant_linear_velocity = Vector2(1164.75, 111)

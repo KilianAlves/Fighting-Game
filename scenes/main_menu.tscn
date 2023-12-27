@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://wv8ue2mb08jj"]
+
+[ext_resource type="Texture2D" uid="uid://b1y5lgyu1ggur" path="res://asset/background/515136.jpg" id="1_m4hvb"]
+[ext_resource type="Script" path="res://scripts/CanvasLayer.gd" id="2_pd43v"]
+[ext_resource type="Theme" uid="uid://cnbjgmerwyepj" path="res://asset/theme/menu_theme.tres" id="2_ri2ot"]
+[ext_resource type="FontFile" uid="uid://jawwu2c7yotp" path="res://asset/font/Lightyear Design.ttf" id="3_33s2h"]
+[ext_resource type="FontFile" uid="uid://b2nht5i21d6mr" path="res://asset/font/Neon Energy x.ttf" id="3_vx33a"]
+[ext_resource type="FontFile" uid="uid://cryuuksx43xes" path="res://asset/font/Neon Energy x.otf" id="4_hif8o"]
+
+[sub_resource type="GDScript" id="GDScript_86qqj"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="MainMenu" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_m4hvb")
+expand_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_pd43v")
+
+[node name="Main" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 574.0
+offset_top = 222.0
+offset_right = 574.0
+offset_bottom = 222.0
+theme = ExtResource("2_ri2ot")
+script = SubResource("GDScript_86qqj")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Main"]
+layout_mode = 1
+offset_right = 113.0
+offset_bottom = 96.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Main/CenterContainer"]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Main/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Game Name" type="Label" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_33s2h")
+theme_override_font_sizes/font_size = 42
+text = "URCA FIGHTING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonPlay" type="Button" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("4_hif8o")
+theme_override_font_sizes/font_size = 32
+text = "Jouer"
+
+[node name="ButtonQuit" type="Button" parent="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_vx33a")
+theme_override_font_sizes/font_size = 32
+text = "Quitter"
+
+[connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonPlay" to="CanvasLayer" method="_on_button_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonQuit" to="CanvasLayer" method="_on_button_quit_pressed"]

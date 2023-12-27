@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqxeox7e274kd"
-path="res://.godot/imported/Hidle.png-bb5907e3e7da4900df8305a9d16bfad1.ctex"
+uid="uid://cromkxaopmpxx"
+path="res://.godot/imported/Fei Long.png-18b6870cef07d7be49df9672de815981.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/Sagat/Asset/Hidle.png"
-dest_files=["res://.godot/imported/Hidle.png-bb5907e3e7da4900df8305a9d16bfad1.ctex"]
+source_file="res://asset/Selection/Fei Long.png"
+dest_files=["res://.godot/imported/Fei Long.png-18b6870cef07d7be49df9672de815981.ctex"]
 
 [params]
 

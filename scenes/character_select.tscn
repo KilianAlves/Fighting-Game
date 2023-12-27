@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=3 uid="uid://vc1oac3lnpdk"]
+
+[ext_resource type="Texture2D" uid="uid://b3t2aj248cffs" path="res://asset/background/CharacterSelection.jpg" id="1_kybs6"]
+[ext_resource type="Texture2D" uid="uid://c7kklegfal4sc" path="res://asset/Selection/Sagat.png" id="2_qn12g"]
+[ext_resource type="Script" path="res://scripts/CharacterSelect.gd" id="3_6hw0h"]
+[ext_resource type="Texture2D" uid="uid://ci3ibs108amdk" path="res://asset/Selection/Vega.png" id="3_q1j2c"]
+[ext_resource type="Texture2D" uid="uid://cromkxaopmpxx" path="res://asset/Selection/Fei Long.png" id="4_hphc3"]
+[ext_resource type="Texture2D" uid="uid://el2vqmh0do77" path="res://asset/SelectionScreen/SelectorPlayer2.png" id="4_k68yf"]
+[ext_resource type="Texture2D" uid="uid://ba4fyaogqmape" path="res://asset/Selection/MBison.png" id="5_kvcrj"]
+[ext_resource type="Texture2D" uid="uid://ct1u6iunfjepb" path="res://asset/Selection/Blanka.png" id="6_838d4"]
+[ext_resource type="Texture2D" uid="uid://dxhto6bbw8eey" path="res://asset/SelectionScreen/SelectorPlayer1.png" id="7_55ce0"]
+[ext_resource type="Script" path="res://scripts/Manager/SpriteSelector.gd" id="10_8yenj"]
+[ext_resource type="Texture2D" uid="uid://6gfyis1chdfs" path="res://asset/SpriteSelector/Sagat-removebg-preview.png" id="11_5tk8y"]
+
+[node name="CharacterSelect" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_kybs6")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="Control"]
+texture_filter = 1
+anchor_mode = 0
+
+[node name="Cursor" type="Sprite2D" parent="Control"]
+z_index = 1
+texture_filter = 1
+position = Vector2(488, 258)
+scale = Vector2(1.02439, 1.13274)
+texture = ExtResource("7_55ce0")
+script = ExtResource("3_6hw0h")
+player1Text = ExtResource("7_55ce0")
+player2Text = ExtResource("4_k68yf")
+portraitOffset = Vector2(88, 132)
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -130.0
+offset_right = 130.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(52, 34)
+columns = 3
+
+[node name="Sagat" type="TextureRect" parent="Control/GridContainer" groups=["Characters"]]
+texture_filter = 1
+custom_minimum_size = Vector2(84, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("2_qn12g")
+
+[node name="Vega" type="TextureRect" parent="Control/GridContainer" groups=["Characters"]]
+texture_filter = 1
+custom_minimum_size = Vector2(84, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("3_q1j2c")
+
+[node name="Fei_Long" type="TextureRect" parent="Control/GridContainer" groups=["Characters"]]
+texture_filter = 1
+custom_minimum_size = Vector2(84, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("4_hphc3")
+
+[node name="M_Bison" type="TextureRect" parent="Control/GridContainer" groups=["Characters"]]
+texture_filter = 1
+custom_minimum_size = Vector2(84, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("5_kvcrj")
+
+[node name="Blanka" type="TextureRect" parent="Control/GridContainer" groups=["Characters"]]
+texture_filter = 1
+custom_minimum_size = Vector2(84, 128)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("6_838d4")
+
+[node name="SpriteSelector" type="Sprite2D" parent="Control"]
+texture_filter = 1
+position = Vector2(233, 318)
+scale = Vector2(3, 3)
+script = ExtResource("10_8yenj")
+Sagat = ExtResource("11_5tk8y")

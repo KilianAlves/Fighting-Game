@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqxeox7e274kd"
-path="res://.godot/imported/Hidle.png-bb5907e3e7da4900df8305a9d16bfad1.ctex"
+uid="uid://ba4fyaogqmape"
+path="res://.godot/imported/MBison.png-3cb6112a988684218e857eb3b25195bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/Sagat/Asset/Hidle.png"
-dest_files=["res://.godot/imported/Hidle.png-bb5907e3e7da4900df8305a9d16bfad1.ctex"]
+source_file="res://asset/Selection/MBison.png"
+dest_files=["res://.godot/imported/MBison.png-3cb6112a988684218e857eb3b25195bf.ctex"]
 
 [params]
 

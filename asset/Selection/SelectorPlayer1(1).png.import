@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqxeox7e274kd"
-path="res://.godot/imported/Hidle.png-bb5907e3e7da4900df8305a9d16bfad1.ctex"
+uid="uid://su3nvneojqil"
+path="res://.godot/imported/SelectorPlayer1(1).png-c809662fe8a6e2262e5e8ac3dc38fc2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/Sagat/Asset/Hidle.png"
-dest_files=["res://.godot/imported/Hidle.png-bb5907e3e7da4900df8305a9d16bfad1.ctex"]
+source_file="res://asset/Selection/SelectorPlayer1(1).png"
+dest_files=["res://.godot/imported/SelectorPlayer1(1).png-c809662fe8a6e2262e5e8ac3dc38fc2c.ctex"]
 
 [params]
 

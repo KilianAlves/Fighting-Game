@@ -12,15 +12,15 @@ var attack_cooldown_timer = 0.0
 var attack_cooldown_duration = 3 # Cooldown duration for the attack animation in seconds
 var can_attack = true # Variable to check if the player can attack
 var is_attacking = false
-@onready var _animation_player = $AnimatedSprite2D
+@onready var _animation_player = $VegaAnimations
 func _ready():
 	_animation_player.play("Hidle")
 	
 	
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
+#	if not is_on_floor():
+#		velocity.y += gravity * delta
 		
 
 	# Handle Jump.

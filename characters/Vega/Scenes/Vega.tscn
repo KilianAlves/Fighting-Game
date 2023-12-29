@@ -100,9 +100,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_28oh4")
 }],
-"loop": true,
+"loop": false,
 "name": &"Jump",
-"speed": 7.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -134,7 +134,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_567ah"]
-size = Vector2(40, 95)
+size = Vector2(141, 308)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idv5g"]
 size = Vector2(47, 8.5)
@@ -146,11 +146,10 @@ script = ExtResource("1_8s0v1")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wbogb")
-animation = &"L.Punch"
-frame_progress = 0.955097
+animation = &"Jump"
 
 [node name="VegaCollision" type="CollisionShape2D" parent="."]
-position = Vector2(3, 9.5)
+position = Vector2(3.5, 22)
 shape = SubResource("RectangleShape2D_567ah")
 
 [node name="LPunchCollision" type="CollisionShape2D" parent="."]

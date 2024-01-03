@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tbjrxrkbhrri"
-path="res://.godot/imported/L.Punch.png-9070c02f7810df5c3c62c4271094e9a1.ctex"
+uid="uid://bn1cypt37oudm"
+path="res://.godot/imported/Crounch-removebg-preview.png-770e3a2d0749a456f3f41e78b5a81471.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/Sagat/Asset/L.Punch.png"
-dest_files=["res://.godot/imported/L.Punch.png-9070c02f7810df5c3c62c4271094e9a1.ctex"]
+source_file="res://characters/Feilong/Assets/Crounch-removebg-preview.png"
+dest_files=["res://.godot/imported/Crounch-removebg-preview.png-770e3a2d0749a456f3f41e78b5a81471.ctex"]
 
 [params]
 

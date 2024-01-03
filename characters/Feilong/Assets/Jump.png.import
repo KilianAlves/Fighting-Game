@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tbjrxrkbhrri"
-path="res://.godot/imported/L.Punch.png-9070c02f7810df5c3c62c4271094e9a1.ctex"
+uid="uid://c62xewrbmcv55"
+path="res://.godot/imported/Jump.png-659a96f965e9b5d98f66fbfdd993e806.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/Sagat/Asset/L.Punch.png"
-dest_files=["res://.godot/imported/L.Punch.png-9070c02f7810df5c3c62c4271094e9a1.ctex"]
+source_file="res://characters/Feilong/Assets/Jump.png"
+dest_files=["res://.godot/imported/Jump.png-659a96f965e9b5d98f66fbfdd993e806.ctex"]
 
 [params]
 

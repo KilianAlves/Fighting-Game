@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn1cypt37oudm"
-path="res://.godot/imported/Crounch-removebg-preview.png-5f629257a9010bf0ec303a51ac3aefac.ctex"
+path="res://.godot/imported/Crounch-removebg-preview.png-770e3a2d0749a456f3f41e78b5a81471.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Crounch-removebg-preview.png"
-dest_files=["res://.godot/imported/Crounch-removebg-preview.png-5f629257a9010bf0ec303a51ac3aefac.ctex"]
+source_file="res://characters/Feilong/Assets/Crounch-removebg-preview.png"
+dest_files=["res://.godot/imported/Crounch-removebg-preview.png-770e3a2d0749a456f3f41e78b5a81471.ctex"]
 
 [params]
 

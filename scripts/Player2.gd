@@ -4,9 +4,6 @@ extends CharacterBody2D
 const SPEED = 300.0
 
 
-# Jump
-
-
 const JUMP_VELOCITY = -600.0
 
 
@@ -21,7 +18,7 @@ var is_jumping = false
 var is_walking = false
 @onready  var _animation_player = $AnimatedSprite2D
 func _ready():
-	_animation_player.play("Hidle")
+	_animation_player.play("Idle")
 	
 	
 func _physics_process(delta):
@@ -35,14 +32,14 @@ func _physics_process(delta):
 
 		
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
+	if Input.is_action_just_pressed("UP_2") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true
 
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("LEFT_2", "RIGHT_2")
 	if direction:
 		velocity.x = direction * SPEED
 		is_walking = true
@@ -50,24 +47,22 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		is_walking = false
-	if Input.is_action_just_pressed("ui_down") :
-		velocity.x = 0
 	move_and_slide()
 
 func _process(delta):
 	
 		
 	
-	if can_attack  and Input.is_action_just_pressed("L.Punch") and attack_cooldown_timer <= 0.0:
-		_animation_player.play("L.punch")
+	if can_attack  and Input.is_action_just_pressed("L.Punch_2") and attack_cooldown_timer <= 0.0:
+		_animation_player.play("L.Punch")
 		is_attacking = true
 		can_attack = false
 	
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("UP_2"):
 		if _animation_player.is_playing() and is_jumping:
 			_animation_player.play("Jump")
 			
-	elif Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("LEFT_2") or Input.is_action_pressed("RIGHT_2"):
 		_animation_player.play("Walk")
 		
 	
@@ -75,7 +70,4 @@ func _process(delta):
 		print("can attack !")
 		can_attack = true
 	if !_animation_player.is_playing():
-		_animation_player.play("Hidle")
-		
-
-
+		_animation_player.play("Idle")

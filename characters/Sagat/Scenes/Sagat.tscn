@@ -48,14 +48,6 @@ region = Rect2(110, 0, 54, 135)
 atlas = ExtResource("2_gho1e")
 region = Rect2(164, 0, 54, 135)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gvqgg"]
-atlas = ExtResource("4_657gx")
-region = Rect2(85, 0, 80, 124)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lt1ab"]
-atlas = ExtResource("4_657gx")
-region = Rect2(0, 0, 80, 124)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_y5x5w"]
 atlas = ExtResource("6_t1k72")
 region = Rect2(88, 0, 82, 124)
@@ -63,6 +55,14 @@ region = Rect2(88, 0, 82, 124)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cm133"]
 atlas = ExtResource("6_t1k72")
 region = Rect2(0, 0, 82, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvqgg"]
+atlas = ExtResource("4_657gx")
+region = Rect2(85, 0, 80, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lt1ab"]
+atlas = ExtResource("4_657gx")
+region = Rect2(0, 0, 80, 124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fe38j"]
 atlas = ExtResource("2_te245")
@@ -115,7 +115,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_8id2b")
 }],
 "loop": true,
-"name": &"Hidle",
+"name": &"Idle",
 "speed": 8.0
 }, {
 "frames": [{
@@ -131,9 +131,23 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kppap")
 }],
-"loop": true,
+"loop": false,
 "name": &"Jump",
-"speed": 7.0
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5x5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm133")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5x5w")
+}],
+"loop": false,
+"name": &"L.Punch",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -148,20 +162,6 @@ animations = [{
 "loop": true,
 "name": &"L.Punch.Forward",
 "speed": 7.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y5x5w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cm133")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y5x5w")
-}],
-"loop": false,
-"name": &"L.punch",
-"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -188,7 +188,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcoq4"]
-size = Vector2(58.3333, 104)
+size = Vector2(49, 104)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 texture_filter = 1
@@ -199,8 +199,8 @@ script = ExtResource("1_imqxj")
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_eekc1")
-animation = &"Hidle"
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.833332, 9)
+position = Vector2(5.49999, 9)
 shape = SubResource("RectangleShape2D_pcoq4")

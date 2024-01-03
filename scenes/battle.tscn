@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cy4lmrbghqsvr"]
+[gd_scene load_steps=6 format=3 uid="uid://cy4lmrbghqsvr"]
 
 [ext_resource type="Texture2D" uid="uid://7h0gs55yno5n" path="res://asset/background/StreetFighterII-SMS-USAGuile.png" id="1_njick"]
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_vrh7i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yffj0"]
+size = Vector2(1160.5, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71uh5"]
+size = Vector2(130, 653)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yoya7"]
+size = Vector2(62, 661)
 
 [node name="Node" type="Node"]
 script = ExtResource("1_vrh7i")
@@ -17,8 +26,21 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_njick")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Area2D"]
-position = Vector2(576.625, 658)
-constant_linear_velocity = Vector2(1164.75, 111)
+[node name="TileMap" type="TileMap" parent="Node2D"]
+format = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D/TileMap"]
+
+[node name="Floor" type="CollisionShape2D" parent="Node2D/TileMap/StaticBody2D"]
+position = Vector2(575.75, 617.5)
+shape = SubResource("RectangleShape2D_yffj0")
+
+[node name="Wall_left" type="CollisionShape2D" parent="Node2D/TileMap/StaticBody2D"]
+position = Vector2(-65, 326.5)
+shape = SubResource("RectangleShape2D_71uh5")
+
+[node name="Wall_right" type="CollisionShape2D" parent="Node2D/TileMap/StaticBody2D"]
+position = Vector2(1181, 325.5)
+shape = SubResource("RectangleShape2D_yoya7")

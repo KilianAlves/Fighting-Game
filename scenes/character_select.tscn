@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/CharacterSelect.gd" id="3_6hw0h"]
 [ext_resource type="Texture2D" uid="uid://ci3ibs108amdk" path="res://asset/Selection/Vega.png" id="3_q1j2c"]
 [ext_resource type="Texture2D" uid="uid://cromkxaopmpxx" path="res://asset/Selection/Fei Long.png" id="4_hphc3"]
-[ext_resource type="Texture2D" uid="uid://el2vqmh0do77" path="res://asset/SelectionScreen/SelectorPlayer2.png" id="4_k68yf"]
+[ext_resource type="Texture2D" uid="uid://umvorjsd8sk7" path="res://asset/SelectionScreen/SelectorPlayer2.png" id="4_k68yf"]
 [ext_resource type="Texture2D" uid="uid://ba4fyaogqmape" path="res://asset/Selection/MBison.png" id="5_kvcrj"]
 [ext_resource type="Texture2D" uid="uid://ct1u6iunfjepb" path="res://asset/Selection/Blanka.png" id="6_838d4"]
 [ext_resource type="Texture2D" uid="uid://dxhto6bbw8eey" path="res://asset/SelectionScreen/SelectorPlayer1.png" id="7_55ce0"]

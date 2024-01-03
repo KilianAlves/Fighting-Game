@@ -75,6 +75,22 @@ region = Rect2(129, 0, 42, 98)
 atlas = ExtResource("4_gwl7h")
 region = Rect2(168, 0, 41, 98)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnidf"]
+atlas = ExtResource("6_bvq72")
+region = Rect2(0, 0, 57, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jovhp"]
+atlas = ExtResource("6_bvq72")
+region = Rect2(58, 0, 58, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cpu7"]
+atlas = ExtResource("6_bvq72")
+region = Rect2(118, 0, 84, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqxia"]
+atlas = ExtResource("6_bvq72")
+region = Rect2(201, 0, 66, 88)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4oojl"]
 atlas = ExtResource("5_t6u75")
 region = Rect2(1, 0, 46, 91)
@@ -94,22 +110,6 @@ region = Rect2(139, 0, 46, 91)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5c2rd"]
 atlas = ExtResource("5_t6u75")
 region = Rect2(185, 0, 46, 91)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pnidf"]
-atlas = ExtResource("6_bvq72")
-region = Rect2(0, 0, 57, 88)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jovhp"]
-atlas = ExtResource("6_bvq72")
-region = Rect2(58, 0, 58, 88)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7cpu7"]
-atlas = ExtResource("6_bvq72")
-region = Rect2(118, 0, 84, 88)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iqxia"]
-atlas = ExtResource("6_bvq72")
-region = Rect2(201, 0, 66, 88)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rf4gy"]
 animations = [{
@@ -175,9 +175,26 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0guby")
 }],
-"loop": true,
+"loop": false,
 "name": &"Jump",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnidf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jovhp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cpu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqxia")
+}],
+"loop": false,
+"name": &"L.Punch",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -198,38 +215,23 @@ animations = [{
 "loop": true,
 "name": &"Walk",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pnidf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jovhp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7cpu7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iqxia")
-}],
-"loop": true,
-"name": &"punch",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yx234"]
 size = Vector2(50, 89)
 
 [node name="Main" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_18una")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(2, 0)
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_rf4gy")
-animation = &"punch"
-frame_progress = 0.312582
+animation = &"Jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -0.5)
+scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_yx234")

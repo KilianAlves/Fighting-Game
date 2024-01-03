@@ -11,11 +11,13 @@ func _ready():
 func SpawnChosenCharacters():
 	givenPlayer.position.x = 288
 	givenPlayer.position.y = 500
-	
+	givenPlayer.set_script(CharacterSelectionManager.playerScript)
 	call_deferred("add_child", givenPlayer)
+
 
 	givenOpponent.position.x = 890
 	givenOpponent.position.y = 500
+	givenOpponent.set_script(CharacterSelectionManager.opponentScript) 
 
 	
 	call_deferred("add_child", givenOpponent)

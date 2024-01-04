@@ -51,6 +51,11 @@ region = Rect2(210, 0, 70, 114)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s28b1"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"Crouch",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tlwpo")
@@ -63,6 +68,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -85,7 +95,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_fovil")
 }],
 "loop": true,
-"name": &"LPunch",
+"name": &"L.Punch",
 "speed": 10.0
 }, {
 "frames": [{
@@ -110,11 +120,13 @@ animations = [{
 size = Vector2(29, 83)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_7c1p5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_s28b1")
-animation = &"Idle"
+animation = &"Crouch"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -22,9 +22,73 @@ var is_attacking = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_animation_player.play("Hidle")
+	# Tourne le perso si joueur 2
+	if (PlayerData.player2 == self.name):
+		PlayerData.flip(self)
+		if (PlayerData.isPlayer2AI):
+			set_script("res://characters/AIPlayerScript.gd")
+		else:
+			_animation_player.play("Idle")
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta):
+	# Add the gravity.
+#	if not is_on_floor():
+#		velocity.y += gravity * delta
+		
+
+	# Handle Jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		
+	
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction = Input.get_axis("ui_left", "ui_right")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if Input.is_action_pressed("ui_down") :
+		velocity.x = 0
+	elif Input.is_action_pressed("L.Punch") and Input.is_action_pressed("ui_right"):
+		velocity.x = 0
+	move_and_slide()
+
 func _process(delta):
-	pass
+	
+	if can_attack and Input.is_action_just_pressed("L.Punch") and attack_cooldown_timer <= 0.0:
+		_animation_player.play("L.Punch")
+		is_attacking = true
+		can_attack = false
+	
+	elif Input.is_action_pressed("ui_up"):
+		if _animation_player.is_playing():
+			_animation_player.play("Jump")
+	elif Input.is_action_pressed("ui_right") or Input.is_action_pressed("ui_left"):
+		_animation_player.play("Walk")
+		
+	elif !can_attack and attack_cooldown_timer <= 0.0:
+		print("can attack !")
+		can_attack = true
+	if !_animation_player.is_playing():
+		_animation_player.play("Idle")
+		
+	if Input.is_action_pressed("ui_down") :
+		_animation_player.play("Crouch")
+
+
+#Jump 
+
+func get_input_velocity() -> float:
+	var horizontal := 0.0
+	
+	if Input.is_action_pressed("left"):
+		horizontal -= 1.0
+	if Input.is_action_pressed("right"):
+		horizontal += 1.0
+	
+	return horizontal
+

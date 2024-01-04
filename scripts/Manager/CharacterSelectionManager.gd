@@ -13,4 +13,5 @@ var selectableCharacters = {
 	"Vega" : preload("res://characters/Vega/Scenes/Vega.tscn"),
 	"Fei_Long" : preload("res://characters/Feilong/Scene/Feilong.tscn"),
 	"Blanka" : preload("res://characters/Blanka/Scenes/Blanka.tscn"),
+	"M_Bison": preload("res://characters/Bison/Scenes/Bison.tscn"),
 }

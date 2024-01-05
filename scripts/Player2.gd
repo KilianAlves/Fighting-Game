@@ -64,8 +64,12 @@ func _process(delta):
 		if _animation_player.is_playing() and is_jumping:
 			_animation_player.play("Jump")
 			
-	elif Input.is_action_pressed("LEFT_2") or Input.is_action_pressed("RIGHT_2"):
+	elif Input.is_action_just_pressed("LEFT_2") or Input.is_action_just_pressed("RIGHT_2"):
 		_animation_player.play("Walk")
+		if Input.is_action_pressed("L.Punch_2"):
+			_animation_player.play("L.Punch")
+			is_attacking = true
+			can_attack = false
 		
 	
 	if !can_attack and attack_cooldown_timer <= 0.0:

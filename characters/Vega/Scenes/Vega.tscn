@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bqdp2rtn8bd04"]
+[gd_scene load_steps=36 format=3 uid="uid://bqdp2rtn8bd04"]
 
 [ext_resource type="Script" path="res://characters/Vega/Scripts/Vega.gd" id="1_8s0v1"]
 [ext_resource type="Texture2D" uid="uid://bsdj1m5h5c6mj" path="res://characters/Vega/Assets/Crouch.png" id="1_lc5me"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://4wissqvl63l8" path="res://characters/Vega/Assets/Death.png" id="4_il7vu"]
 [ext_resource type="Texture2D" uid="uid://e6th1ofj3myd" path="res://characters/Vega/Assets/Walk.png" id="4_rty1c"]
 [ext_resource type="Texture2D" uid="uid://bnbavbshedrha" path="res://characters/Vega/Assets/L.Punch.png" id="4_x586m"]
+[ext_resource type="Texture2D" uid="uid://ce0yqg4v5ey0e" path="res://characters/Vega/Assets/Hit.png" id="5_1n5dg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1w7s"]
 atlas = ExtResource("2_l301r")
@@ -40,6 +41,18 @@ region = Rect2(160, 0, 80, 110)
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3bg5"]
 atlas = ExtResource("4_il7vu")
 region = Rect2(240, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldpu0"]
+atlas = ExtResource("5_1n5dg")
+region = Rect2(0, 0, 63, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feucd"]
+atlas = ExtResource("5_1n5dg")
+region = Rect2(63, 0, 63, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1b33"]
+atlas = ExtResource("5_1n5dg")
+region = Rect2(126, 0, 63, 112)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qryg6"]
 atlas = ExtResource("2_6sdqr")
@@ -131,6 +144,20 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_ldpu0")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_feucd")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_u1b33")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qryg6")
 }, {
@@ -200,8 +227,8 @@ script = ExtResource("1_8s0v1")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wbogb")
-animation = &"Death"
-frame_progress = 0.717107
+animation = &"Hit"
+frame_progress = 0.135152
 
 [node name="VegaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 22)

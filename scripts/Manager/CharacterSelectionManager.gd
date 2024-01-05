@@ -7,6 +7,7 @@ var playerScript = preload("res://scripts/Player1.gd")
 var opponent
 var opponent_name
 var opponentScript = preload("res://scripts/Player2.gd")
+var AIScript = preload("res://scripts/AIPlayerScript.gd")
 
 var selectableCharacters = {
 	"Sagat" : preload("res://characters/Sagat/Scenes/Sagat.tscn"),

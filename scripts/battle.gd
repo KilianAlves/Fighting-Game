@@ -17,7 +17,10 @@ func SpawnChosenCharacters():
 
 	givenOpponent.position.x = 890
 	givenOpponent.position.y = 500
-	givenOpponent.set_script(CharacterSelectionManager.opponentScript)
+	if (PlayerData.isPlayer2AI):
+		givenOpponent.set_script(CharacterSelectionManager.AIScript)
+	else:
+		givenOpponent.set_script(CharacterSelectionManager.opponentScript)
 
 	PlayerData.player1 = givenPlayer.name
 	if (givenPlayer.name == givenOpponent.name):

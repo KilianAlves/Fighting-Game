@@ -1,11 +1,20 @@
-[gd_scene load_steps=24 format=3 uid="uid://bqdp2rtn8bd04"]
+[gd_scene load_steps=27 format=3 uid="uid://bqdp2rtn8bd04"]
 
 [ext_resource type="Script" path="res://characters/Vega/Scripts/Vega.gd" id="1_8s0v1"]
 [ext_resource type="Texture2D" uid="uid://bsdj1m5h5c6mj" path="res://characters/Vega/Assets/Crouch.png" id="1_lc5me"]
 [ext_resource type="Texture2D" uid="uid://qugks53amxll" path="res://characters/Vega/Assets/Hidle.png" id="2_6sdqr"]
+[ext_resource type="Texture2D" uid="uid://cg7mpy2528bh7" path="res://characters/Vega/Assets/Blocking.png" id="2_l301r"]
 [ext_resource type="Texture2D" uid="uid://gn65khb4tbx4" path="res://characters/Vega/Assets/Jump.png" id="3_3ptay"]
 [ext_resource type="Texture2D" uid="uid://e6th1ofj3myd" path="res://characters/Vega/Assets/Walk.png" id="4_rty1c"]
 [ext_resource type="Texture2D" uid="uid://bnbavbshedrha" path="res://characters/Vega/Assets/L.Punch.png" id="4_x586m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1w7s"]
+atlas = ExtResource("2_l301r")
+region = Rect2(2, 0, 60, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pwji"]
+atlas = ExtResource("2_l301r")
+region = Rect2(62, 0, 60, 101)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3r8e"]
 atlas = ExtResource("1_lc5me")
@@ -65,6 +74,17 @@ region = Rect2(216, 0, 72, 122)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wbogb"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1w7s")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_6pwji")
+}],
+"loop": true,
+"name": &"Blocking",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_i3r8e")
@@ -146,9 +166,8 @@ script = ExtResource("1_8s0v1")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wbogb")
-animation = &"L.Punch"
-frame = 1
-frame_progress = 1.0
+animation = &"Blocking"
+frame_progress = 0.0746453
 
 [node name="VegaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 22)

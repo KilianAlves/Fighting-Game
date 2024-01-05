@@ -137,7 +137,7 @@ animations = [{
 size = Vector2(141, 308)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6jlcq"]
-size = Vector2(66, 26)
+size = Vector2(66, 40)
 
 [node name="Vega" type="CharacterBody2D"]
 script = ExtResource("1_8s0v1")
@@ -157,7 +157,7 @@ shape = SubResource("RectangleShape2D_567ah")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Punch" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(140, -92)
+position = Vector2(140, -85)
 shape = SubResource("RectangleShape2D_6jlcq")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

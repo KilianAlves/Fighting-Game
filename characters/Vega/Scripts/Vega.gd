@@ -15,9 +15,15 @@ var can_attack = true # Variable to check if the player can attack
 var is_attacking = false
 var is_jumping = false
 var is_walking = false
-@onready  var _animation_player = $VegaAnimations
+@onready  var _animation_player = $AnimatedSprite2D
 func _ready():
-	_animation_player.play("Hidle")
+	# Tourne le perso si joueur 2
+	if (PlayerData.player2 == self.name):
+		PlayerData.flip(self)
+		if (PlayerData.isPlayer2AI):
+			set_script("res://characters/AIPlayerScript.gd")
+		else:
+			_animation_player.play("Hidle")
 	
 	
 func _physics_process(delta):
@@ -29,7 +35,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		is_jumping = false
 		print(is_jumping)
-		
+
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -53,8 +59,8 @@ func _process(delta):
 	
 	if !is_walking or !_animation_player.is_playing():
 		_animation_player.play("Hidle")
-		
-	
+
+
 	if can_attack and Input.is_action_just_pressed("L.Punch") and attack_cooldown_timer <= 0.0:
 		_animation_player.play("L.punch")
 		is_attacking = true

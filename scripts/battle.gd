@@ -12,12 +12,20 @@ func SpawnChosenCharacters():
 	givenPlayer.position.x = 288
 	givenPlayer.position.y = 500
 	givenPlayer.set_script(CharacterSelectionManager.playerScript)
-	call_deferred("add_child", givenPlayer)
+	call_deferred("add_child", givenPlayer, true)
 
 
 	givenOpponent.position.x = 890
 	givenOpponent.position.y = 500
-	givenOpponent.set_script(CharacterSelectionManager.opponentScript) 
+	if (PlayerData.isPlayer2AI):
+		givenOpponent.set_script(CharacterSelectionManager.AIScript)
+	else:
+		givenOpponent.set_script(CharacterSelectionManager.opponentScript)
 
-	
-	call_deferred("add_child", givenOpponent)
+	PlayerData.player1 = givenPlayer.name
+	if (givenPlayer.name == givenOpponent.name):
+		PlayerData.player2 = givenOpponent.name+"2"
+	else:
+		PlayerData.player2 = givenOpponent.name
+
+	call_deferred("add_child", givenOpponent, true)

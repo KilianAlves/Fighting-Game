@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bqdp2rtn8bd04"]
+[gd_scene load_steps=45 format=3 uid="uid://bqdp2rtn8bd04"]
 
 [ext_resource type="Script" path="res://characters/Vega/Scripts/Vega.gd" id="1_8s0v1"]
 [ext_resource type="Texture2D" uid="uid://bsdj1m5h5c6mj" path="res://characters/Vega/Assets/Crouch.png" id="1_lc5me"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://e6th1ofj3myd" path="res://characters/Vega/Assets/Walk.png" id="4_rty1c"]
 [ext_resource type="Texture2D" uid="uid://bnbavbshedrha" path="res://characters/Vega/Assets/L.Punch.png" id="4_x586m"]
 [ext_resource type="Texture2D" uid="uid://ce0yqg4v5ey0e" path="res://characters/Vega/Assets/Hit.png" id="5_1n5dg"]
+[ext_resource type="Texture2D" uid="uid://ccffjcef3kty8" path="res://characters/Vega/Assets/Victory.png" id="9_5av2h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1w7s"]
 atlas = ExtResource("2_l301r")
@@ -85,6 +86,38 @@ region = Rect2(10, 0, 118, 94)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4lq5q"]
 atlas = ExtResource("4_x586m")
 region = Rect2(128, 0, 118, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oicgs"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(0, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckju6"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(79, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5gqu"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(158, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ypa5"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(237, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpuno"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(316, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hpmd"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(395, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdlor"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(474, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tmyc"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(553, 0, 79, 141)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmvoh"]
 atlas = ExtResource("4_rty1c")
@@ -198,6 +231,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_oicgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckju6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5gqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ypa5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpuno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hpmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdlor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tmyc")
+}],
+"loop": true,
+"name": &"Victory",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_cmvoh")
 }, {
 "duration": 1.0,
@@ -227,8 +289,8 @@ script = ExtResource("1_8s0v1")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wbogb")
-animation = &"Hit"
-frame_progress = 0.135152
+animation = &"Victory"
+frame_progress = 0.111652
 
 [node name="VegaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 22)

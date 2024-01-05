@@ -1,6 +1,5 @@
 [gd_scene load_steps=18 format=3 uid="uid://c7aicg8ujdgbu"]
 
-[ext_resource type="Script" path="res://characters/Bison/Script/Bison.gd" id="1_7c1p5"]
 [ext_resource type="Texture2D" uid="uid://ckgshyh64odvs" path="res://characters/Bison/Asset/Idle.png" id="1_setm8"]
 [ext_resource type="Texture2D" uid="uid://c6ymqu6rfb3kx" path="res://characters/Bison/Asset/LPunch.png" id="2_v67vm"]
 [ext_resource type="Texture2D" uid="uid://buihkx6mdr58c" path="res://characters/Bison/Asset/Walk.png" id="3_i7j5u"]
@@ -21,10 +20,6 @@ region = Rect2(140, 0, 70, 114)
 atlas = ExtResource("2_v67vm")
 region = Rect2(0, 0, 75, 109)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f6j1n"]
-atlas = ExtResource("2_v67vm")
-region = Rect2(75, 0, 75, 109)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_422fe"]
 atlas = ExtResource("2_v67vm")
 region = Rect2(150, 0, 75, 109)
@@ -32,6 +27,10 @@ region = Rect2(150, 0, 75, 109)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hp22i"]
 atlas = ExtResource("2_v67vm")
 region = Rect2(225, 0, 75, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6j1n"]
+atlas = ExtResource("2_v67vm")
+region = Rect2(75, 0, 75, 109)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k2grt"]
 atlas = ExtResource("3_i7j5u")
@@ -80,9 +79,6 @@ animations = [{
 "texture": SubResource("AtlasTexture_fovil")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f6j1n")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_422fe")
 }, {
 "duration": 1.0,
@@ -90,13 +86,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f6j1n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fovil")
 }],
 "loop": true,
 "name": &"L.Punch",
-"speed": 10.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -119,16 +112,25 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3hkw"]
 size = Vector2(29, 83)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfsn8"]
+size = Vector2(28.3333, 17.6667)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(3, 3)
-script = ExtResource("1_7c1p5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_s28b1")
-animation = &"Crouch"
+animation = &"L.Punch"
 autoplay = "Idle"
+frame_progress = 0.0161989
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-7.5, 10.5)
 shape = SubResource("RectangleShape2D_o3hkw")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Punch" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(21.8333, -18.1667)
+shape = SubResource("RectangleShape2D_kfsn8")

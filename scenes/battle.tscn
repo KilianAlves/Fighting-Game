@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy4lmrbghqsvr"]
+[gd_scene load_steps=7 format=3 uid="uid://cy4lmrbghqsvr"]
 
 [ext_resource type="Texture2D" uid="uid://7h0gs55yno5n" path="res://asset/background/StreetFighterII-SMS-USAGuile.png" id="1_njick"]
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_vrh7i"]
+[ext_resource type="PackedScene" uid="uid://cv85ubs7wlyj5" path="res://scenes/GUI.tscn" id="3_1oab6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yffj0"]
 size = Vector2(1160.5, 77)
@@ -44,3 +45,5 @@ shape = SubResource("RectangleShape2D_71uh5")
 [node name="Wall_right" type="CollisionShape2D" parent="Node2D/TileMap/StaticBody2D"]
 position = Vector2(1181, 325.5)
 shape = SubResource("RectangleShape2D_yoya7")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_1oab6")]

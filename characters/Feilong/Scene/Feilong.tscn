@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dlapi1spve5g3"]
+[gd_scene load_steps=36 format=3 uid="uid://dlapi1spve5g3"]
 
 [ext_resource type="Script" path="res://characters/Feilong/Scene/Feilong.gd" id="1_18una"]
 [ext_resource type="Texture2D" uid="uid://bn1cypt37oudm" path="res://characters/Feilong/Assets/Crounch-removebg-preview.png" id="2_13d3m"]
@@ -194,7 +194,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"L.Punch",
-"speed": 10.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -220,6 +220,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yx234"]
 size = Vector2(50, 89)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81yyq"]
+size = Vector2(36, 32)
+
 [node name="Main" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_18una")
@@ -229,9 +232,19 @@ texture_filter = 1
 position = Vector2(2, 0)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_rf4gy")
-animation = &"Jump"
+animation = &"L.Punch"
+frame = 2
+frame_progress = 0.309973
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -0.5)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_yx234")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Punch" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(106, -28)
+shape = SubResource("RectangleShape2D_81yyq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

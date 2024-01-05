@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 
 
@@ -19,7 +18,7 @@ var is_walking = false
 @onready  var _animation_player = $AnimatedSprite2D
 func _ready():
 	_animation_player.play("Idle")
-	
+	$Area2D/Punch.disabled = true
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -54,10 +53,12 @@ func _process(delta):
 		
 	
 	if can_attack  and Input.is_action_just_pressed("L.Punch_2") and attack_cooldown_timer <= 0.0:
+		$Area2D/Punch.disabled = false
 		_animation_player.play("L.Punch")
 		is_attacking = true
 		can_attack = false
-	
+	if Input.is_action_just_released("L.Punch_2"):
+		$Area2D/Punch.disabled = true
 	if Input.is_action_pressed("UP_2"):
 		if _animation_player.is_playing() and is_jumping:
 			_animation_player.play("Jump")
@@ -71,3 +72,6 @@ func _process(delta):
 		can_attack = true
 	if !_animation_player.is_playing():
 		_animation_player.play("Idle")
+
+func _on_area_2d_body_entered(body):
+	PLayer.J1_TakeDmg()

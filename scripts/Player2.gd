@@ -17,6 +17,7 @@ var is_jumping = false
 var is_walking = false
 @onready  var _animation_player = $AnimatedSprite2D
 func _ready():
+	PlayerData.flip(self)
 	_animation_player.play("Idle")
 	$Area2D/Punch.disabled = true
 	

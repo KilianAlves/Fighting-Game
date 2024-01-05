@@ -1,11 +1,23 @@
-[gd_scene load_steps=24 format=3 uid="uid://bqdp2rtn8bd04"]
+[gd_scene load_steps=45 format=3 uid="uid://bqdp2rtn8bd04"]
 
 [ext_resource type="Script" path="res://characters/Vega/Scripts/Vega.gd" id="1_8s0v1"]
 [ext_resource type="Texture2D" uid="uid://bsdj1m5h5c6mj" path="res://characters/Vega/Assets/Crouch.png" id="1_lc5me"]
 [ext_resource type="Texture2D" uid="uid://qugks53amxll" path="res://characters/Vega/Assets/Hidle.png" id="2_6sdqr"]
+[ext_resource type="Texture2D" uid="uid://cg7mpy2528bh7" path="res://characters/Vega/Assets/Blocking.png" id="2_l301r"]
 [ext_resource type="Texture2D" uid="uid://gn65khb4tbx4" path="res://characters/Vega/Assets/Jump.png" id="3_3ptay"]
+[ext_resource type="Texture2D" uid="uid://4wissqvl63l8" path="res://characters/Vega/Assets/Death.png" id="4_il7vu"]
 [ext_resource type="Texture2D" uid="uid://e6th1ofj3myd" path="res://characters/Vega/Assets/Walk.png" id="4_rty1c"]
 [ext_resource type="Texture2D" uid="uid://bnbavbshedrha" path="res://characters/Vega/Assets/L.Punch.png" id="4_x586m"]
+[ext_resource type="Texture2D" uid="uid://ce0yqg4v5ey0e" path="res://characters/Vega/Assets/Hit.png" id="5_1n5dg"]
+[ext_resource type="Texture2D" uid="uid://ccffjcef3kty8" path="res://characters/Vega/Assets/Victory.png" id="9_5av2h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1w7s"]
+atlas = ExtResource("2_l301r")
+region = Rect2(2, 0, 60, 101)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pwji"]
+atlas = ExtResource("2_l301r")
+region = Rect2(62, 0, 60, 101)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3r8e"]
 atlas = ExtResource("1_lc5me")
@@ -14,6 +26,34 @@ region = Rect2(59, 0, 59, 86)
 [sub_resource type="AtlasTexture" id="AtlasTexture_cunvt"]
 atlas = ExtResource("1_lc5me")
 region = Rect2(0, 0, 59, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fyiw"]
+atlas = ExtResource("4_il7vu")
+region = Rect2(0, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvvkp"]
+atlas = ExtResource("4_il7vu")
+region = Rect2(80, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3fpk"]
+atlas = ExtResource("4_il7vu")
+region = Rect2(160, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3bg5"]
+atlas = ExtResource("4_il7vu")
+region = Rect2(240, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldpu0"]
+atlas = ExtResource("5_1n5dg")
+region = Rect2(0, 0, 63, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_feucd"]
+atlas = ExtResource("5_1n5dg")
+region = Rect2(63, 0, 63, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1b33"]
+atlas = ExtResource("5_1n5dg")
+region = Rect2(126, 0, 63, 112)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qryg6"]
 atlas = ExtResource("2_6sdqr")
@@ -47,6 +87,38 @@ region = Rect2(10, 0, 118, 94)
 atlas = ExtResource("4_x586m")
 region = Rect2(128, 0, 118, 94)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oicgs"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(0, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckju6"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(79, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5gqu"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(158, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ypa5"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(237, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mpuno"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(316, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hpmd"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(395, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdlor"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(474, 0, 79, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tmyc"]
+atlas = ExtResource("9_5av2h")
+region = Rect2(553, 0, 79, 141)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cmvoh"]
 atlas = ExtResource("4_rty1c")
 region = Rect2(0, 0, 72, 122)
@@ -66,6 +138,17 @@ region = Rect2(216, 0, 72, 122)
 [sub_resource type="SpriteFrames" id="SpriteFrames_wbogb"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1w7s")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_6pwji")
+}],
+"loop": true,
+"name": &"Blocking",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_i3r8e")
 }, {
@@ -74,6 +157,37 @@ animations = [{
 }],
 "loop": true,
 "name": &"Crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fyiw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvvkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3fpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3bg5")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_ldpu0")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_feucd")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_u1b33")
+}],
+"loop": true,
+"name": &"Hit",
 "speed": 5.0
 }, {
 "frames": [{
@@ -117,6 +231,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_oicgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckju6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5gqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ypa5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpuno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hpmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdlor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tmyc")
+}],
+"loop": true,
+"name": &"Victory",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_cmvoh")
 }, {
 "duration": 1.0,
@@ -146,9 +289,8 @@ script = ExtResource("1_8s0v1")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wbogb")
-animation = &"L.Punch"
-frame = 1
-frame_progress = 1.0
+animation = &"Victory"
+frame_progress = 0.111652
 
 [node name="VegaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 22)

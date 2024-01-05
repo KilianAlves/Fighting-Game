@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 
 const JUMP_VELOCITY = -600.0
 
 
+	
 var is_crouching: bool = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -15,6 +15,7 @@ var can_attack = true # Variable to check if the player can attack
 var is_attacking = false
 var is_jumping = false
 var is_walking = false
+signal health_changed_J1()
 @onready  var _animation_player = $AnimatedSprite2D
 func _ready():
 	_animation_player.play("Idle")
@@ -50,10 +51,10 @@ func _physics_process(delta):
 
 func _process(delta):
 	
-		
 	
 	if can_attack  and Input.is_action_just_pressed("L.Punch_1") and attack_cooldown_timer <= 0.0:
 		_animation_player.play("L.Punch")
+		PLayer.J1_TakeDmg()
 		is_attacking = true
 		can_attack = false
 	
@@ -70,3 +71,5 @@ func _process(delta):
 		can_attack = true
 	if !_animation_player.is_playing():
 		_animation_player.play("Idle")
+
+

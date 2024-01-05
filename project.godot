@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 CharacterSelectionManager="*res://scripts/Manager/CharacterSelectionManager.gd"
 SpriteSelector="*res://scripts/Manager/SpriteSelector.gd"
+PLayer="*res://scripts/Manager/LP_PLayer.gd"
 
 [input]
 

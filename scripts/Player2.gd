@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 
 
@@ -55,6 +54,7 @@ func _process(delta):
 	
 	if can_attack  and Input.is_action_just_pressed("L.Punch_2") and attack_cooldown_timer <= 0.0:
 		_animation_player.play("L.Punch")
+		PLayer.J2_TakeDmg()
 		is_attacking = true
 		can_attack = false
 	

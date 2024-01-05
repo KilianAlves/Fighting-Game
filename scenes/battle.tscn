@@ -11,7 +11,7 @@ size = Vector2(1160.5, 77)
 size = Vector2(130, 653)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yoya7"]
-size = Vector2(62, 661)
+size = Vector2(59, 661)
 
 [node name="Node" type="Node"]
 script = ExtResource("1_vrh7i")
@@ -43,7 +43,7 @@ position = Vector2(-65, 326.5)
 shape = SubResource("RectangleShape2D_71uh5")
 
 [node name="Wall_right" type="CollisionShape2D" parent="Node2D/TileMap/StaticBody2D"]
-position = Vector2(1181, 325.5)
+position = Vector2(1182.5, 325.5)
 shape = SubResource("RectangleShape2D_yoya7")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_1oab6")]

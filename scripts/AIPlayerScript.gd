@@ -30,6 +30,7 @@ var attackStartIndex = 2
 
 
 func _ready():
+	$Area2D/Punch.disabled = true
 	move_and_slide()
 	countDown = maxTimeTillChoice
 
@@ -85,8 +86,10 @@ func _choose_action():
 		randomAttack.randomize()
 		var attackValue = randomAttack.randi_range(attackStartIndex, generalMoves.size() - 1)  # Pick from all possible moves what kind of attack is needed
 		animTree.play(generalMoves[attackValue])
+		$Area2D/Punch.disabled = false
 		
 	else:
+		$Area2D/Punch.disabled = true
 		#move & jump
 		randomValue = _return_value()
 		if (randomValue < 70 and is_on_floor()):
@@ -130,3 +133,6 @@ func _move_AI_reverse(delta):
 	velocity.x = -1 * moveDir * AIMovementSpeed
 	
 	move_and_slide()
+	
+func _on_area_2d_body_entered(body):
+	PLayer.J1_TakeDmg()

@@ -198,7 +198,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0feo2"]
 size = Vector2(57.5625, 87.25)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D2" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

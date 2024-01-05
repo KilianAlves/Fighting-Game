@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://cv85ubs7wlyj5"]
+
+[ext_resource type="Script" path="res://scripts/GUI.gd" id="1_0p3ia"]
+[ext_resource type="Texture2D" uid="uid://v6ege3jxfvha" path="res://asset/life/contourHp.png" id="2_5vx1c"]
+[ext_resource type="Texture2D" uid="uid://dktyiaiv63fkp" path="res://asset/life/testhp.png" id="2_yk17y"]
+[ext_resource type="FontFile" uid="uid://cryuuksx43xes" path="res://asset/font/Neon Energy x.otf" id="3_m3clf"]
+[ext_resource type="Texture2D" uid="uid://ci2s1na5iooff" path="res://asset/life/dehetv9-efad5ead-a1c7-4ef7-94d4-0c758e7eddb9.png" id="5_cvm3y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h6lkd"]
+font = ExtResource("3_m3clf")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_l4ycj"]
+font = ExtResource("3_m3clf")
+font_size = 25
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_0p3ia")
+LP_J2 = 80
+
+[node name="BackgroundHp_J1" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 334.0
+offset_bottom = 70.0
+texture = ExtResource("2_5vx1c")
+
+[node name="BackgroundHp_J2" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 818.0
+offset_top = 20.0
+offset_right = 1142.0
+offset_bottom = 70.0
+texture = ExtResource("2_5vx1c")
+
+[node name="Label_J1" type="Label" parent="."]
+texture_filter = 1
+offset_left = 20.0
+offset_top = 70.0
+offset_right = 120.0
+offset_bottom = 108.0
+text = "Joueur 1"
+label_settings = SubResource("LabelSettings_h6lkd")
+
+[node name="Label_J2" type="Label" parent="."]
+offset_left = 1011.0
+offset_top = 70.0
+offset_right = 1132.0
+offset_bottom = 105.0
+size_flags_horizontal = 0
+text = "Joueur 2"
+label_settings = SubResource("LabelSettings_l4ycj")
+vertical_alignment = 1
+
+[node name="J1" type="BoxContainer" parent="."]
+offset_left = 22.0
+offset_top = 32.0
+offset_right = 322.0
+offset_bottom = 58.0
+
+[node name="LP" type="TextureProgressBar" parent="J1"]
+texture_filter = 1
+layout_mode = 2
+texture_progress = ExtResource("2_yk17y")
+
+[node name="J2" type="BoxContainer" parent="."]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -322.0
+offset_top = 32.0
+offset_right = -22.0
+offset_bottom = 58.0
+grow_horizontal = 0
+
+[node name="LP" type="TextureProgressBar" parent="J2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 0
+texture_progress = ExtResource("2_yk17y")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -50.0
+offset_right = 50.0
+offset_bottom = 100.0
+grow_horizontal = 2
+texture = ExtResource("5_cvm3y")
+expand_mode = 1

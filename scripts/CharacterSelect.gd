@@ -70,6 +70,7 @@ func _process(delta):
 	if(Input.is_action_just_pressed("ui_accept")):
 		if(CharacterSelectionManager.player == null):
 			CharacterSelectionManager.player = CharacterSelectionManager.selectableCharacters[characters[currentSelected].name]
+			CharacterSelectionManager.player_name = characters[currentSelected].name
 			texture = player2Text
 			SpriteSelector.changeSprite(characters[currentSelected].name)
 			$"../SpriteSelector".show()
@@ -79,4 +80,5 @@ func _process(delta):
 			
 		else:
 			CharacterSelectionManager.opponent = CharacterSelectionManager.selectableCharacters[characters[currentSelected].name]
+			CharacterSelectionManager.opponent_name = characters[currentSelected].name
 			get_tree().change_scene_to_file("res://scenes/battle.tscn")

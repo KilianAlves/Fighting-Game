@@ -1,9 +1,11 @@
 extends Node
 
-var player 
+var player
+var player_name
 var playerScript = preload("res://scripts/Player1.gd")
 
 var opponent
+var opponent_name
 var opponentScript = preload("res://scripts/Player2.gd")
 
 var selectableCharacters = {

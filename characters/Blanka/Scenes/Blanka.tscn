@@ -204,9 +204,13 @@ size = Vector2(57.5625, 87.25)
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_743e1")
-animation = &"Jump"
+animation = &"L.Punch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_0feo2")
 debug_color = Color(0.360784, 0.482353, 1, 0.309804)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Punch" type="CollisionShape2D" parent="Area2D"]

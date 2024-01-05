@@ -4,7 +4,7 @@ const SPEED = 300.0
 
 const JUMP_VELOCITY = -600.0
 
-
+var disableColl = true
 	
 var is_crouching: bool = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -19,7 +19,7 @@ signal health_changed_J1()
 @onready  var _animation_player = $AnimatedSprite2D
 func _ready():
 	_animation_player.play("Idle")
-	
+	$Area2D/Punch.disabled = true
 	
 func _physics_process(delta):
 	# Add the gravity.
@@ -50,13 +50,18 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	
+	if $Area2D/Punch.is_disabled():
+		print("false")
 	
 	if can_attack  and Input.is_action_just_pressed("L.Punch_1") and attack_cooldown_timer <= 0.0:
+		$Area2D/Punch.disabled = false
 		_animation_player.play("L.Punch")
-		PLayer.J1_TakeDmg()
 		is_attacking = true
 		can_attack = false
+		print(_animation_player.animation)
+	if Input.is_action_just_released("L.Punch_1"):
+		$Area2D/Punch.disabled = true
+		print($Area2D/Punch.is_disabled())
 	
 	if Input.is_action_pressed("UP_1"):
 		if _animation_player.is_playing() and is_jumping:
@@ -69,7 +74,11 @@ func _process(delta):
 	if !can_attack and attack_cooldown_timer <= 0.0:
 		print("can attack !")
 		can_attack = true
+		
 	if !_animation_player.is_playing():
 		_animation_player.play("Idle")
-
+		
+func _on_area_2d_body_entered(body):
+	PLayer.J2_TakeDmg()
+	
 

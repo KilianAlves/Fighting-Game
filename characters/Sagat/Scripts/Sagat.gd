@@ -39,7 +39,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true
 
-	
+	$Area2D/Punch.set_disabled(false)
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
@@ -55,8 +55,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	
-		
 	
 	if can_attack  and Input.is_action_just_pressed("L.Punch") and attack_cooldown_timer <= 0.0:
 		_animation_player.play("L.punch")
@@ -77,5 +75,4 @@ func _process(delta):
 	if !_animation_player.is_playing():
 		_animation_player.play("Hidle")
 		
-
 

@@ -1,5 +1,7 @@
 extends Node
 
+var winner_name: String
+
 var player
 var player_name
 var playerScript = preload("res://scripts/Player1.gd")

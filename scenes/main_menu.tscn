@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://wv8ue2mb08jj"]
+[gd_scene load_steps=9 format=3 uid="uid://wv8ue2mb08jj"]
 
 [ext_resource type="Texture2D" uid="uid://b1y5lgyu1ggur" path="res://asset/background/515136.jpg" id="1_m4hvb"]
 [ext_resource type="Script" path="res://scripts/CanvasLayer.gd" id="2_pd43v"]
@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://jawwu2c7yotp" path="res://asset/font/Lightyear Design.ttf" id="3_33s2h"]
 [ext_resource type="FontFile" uid="uid://b2nht5i21d6mr" path="res://asset/font/Neon Energy x.ttf" id="3_vx33a"]
 [ext_resource type="FontFile" uid="uid://cryuuksx43xes" path="res://asset/font/Neon Energy x.otf" id="4_hif8o"]
+
+[sub_resource type="GDScript" id="GDScript_4wy1v"]
 
 [sub_resource type="GDScript" id="GDScript_86qqj"]
 script/source = "extends Control
@@ -22,6 +24,7 @@ func _process(delta):
 "
 
 [node name="MainMenu" type="Node"]
+script = SubResource("GDScript_4wy1v")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 15

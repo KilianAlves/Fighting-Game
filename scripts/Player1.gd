@@ -43,15 +43,12 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 		is_walking = true
-		print("Bouge")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		is_walking = false
 	move_and_slide()
 
 func _process(delta):
-	if $Area2D/Punch.is_disabled():
-		print("false")
 	
 	if can_attack  and Input.is_action_just_pressed("L.Punch_1") and attack_cooldown_timer <= 0.0:
 		$Area2D/Punch.disabled = false

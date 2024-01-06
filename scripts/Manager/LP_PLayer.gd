@@ -1,9 +1,8 @@
 extends Node
-
 var LP_J1 = 100
 var LP_J2 = 100
-
 var rng = RandomNumberGenerator.new()
+var PlayerWin = false
 
 func J1_TakeDmg():
 	var dmg = rng.randf_range(5, 12)

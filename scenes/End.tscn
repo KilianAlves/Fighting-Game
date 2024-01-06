@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://uaov5r3miphv"]
+
+[ext_resource type="Script" path="res://scripts/End.gd" id="1_1ec5l"]
+[ext_resource type="Theme" uid="uid://cnbjgmerwyepj" path="res://asset/theme/menu_theme.tres" id="1_t3tt8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i5cqg"]
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_wcv1i"]
+font_size = 100
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_1ec5l")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -575.0
+offset_top = -300.0
+offset_right = 575.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_t3tt8")
+
+[node name="Player" type="Label" parent="Panel"]
+offset_left = 624.0
+offset_top = 29.0
+offset_right = 1052.0
+offset_bottom = 145.0
+text = "Player"
+label_settings = SubResource("LabelSettings_i5cqg")
+
+[node name="Replay" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 50.0
+offset_right = 518.0
+offset_bottom = 119.0
+text = "Selection des personnages"
+
+[node name="Quit" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 28.0
+offset_top = 24.0
+offset_right = 515.0
+offset_bottom = 93.0
+grow_vertical = 2
+text = "Retourner Au menu"
+
+[node name="Win" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 148.0
+offset_right = 926.0
+offset_bottom = 264.0
+text = "Win"
+label_settings = SubResource("LabelSettings_wcv1i")
+
+[connection signal="pressed" from="Panel/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]

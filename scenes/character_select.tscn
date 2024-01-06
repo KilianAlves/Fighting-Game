@@ -451,7 +451,7 @@ position = Vector2(279, 322)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_bvcjh")
 animation = &"Fei_Long"
-frame_progress = 0.372473
+frame_progress = 0.519518
 
 [node name="Opponent" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

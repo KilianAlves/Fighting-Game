@@ -98,4 +98,5 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	if !PLayer.J1_IsBlocking :
+		$AudioStreamPlayer2D.play()
 		PLayer.J1_TakeDmg()

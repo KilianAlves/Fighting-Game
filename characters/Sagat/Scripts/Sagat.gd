@@ -55,7 +55,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta):
-	
 	if can_attack  and Input.is_action_just_pressed("L.Punch") and attack_cooldown_timer <= 0.0:
 		_animation_player.play("L.punch")
 		is_attacking = true

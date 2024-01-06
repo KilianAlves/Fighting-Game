@@ -24,7 +24,6 @@ func _on_canvas_layer_end():
 	else: 
 		PanPlayer.text = CharacterSelectionManager.opponent_name
 	show()
-	
 
 
 func restart():

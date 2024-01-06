@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bqdp2rtn8bd04"]
+[gd_scene load_steps=45 format=3 uid="uid://bqdp2rtn8bd04"]
 
 [ext_resource type="Script" path="res://characters/Vega/Scripts/Vega.gd" id="1_8s0v1"]
 [ext_resource type="Texture2D" uid="uid://bsdj1m5h5c6mj" path="res://characters/Vega/Assets/Crouch.png" id="1_lc5me"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bnbavbshedrha" path="res://characters/Vega/Assets/L.Punch.png" id="4_x586m"]
 [ext_resource type="Texture2D" uid="uid://pb81ivdnveod" path="res://characters/Vega/Assets/Hit.png" id="5_1n5dg"]
 [ext_resource type="Texture2D" uid="uid://d2d6h5afkpk8a" path="res://characters/Vega/Assets/Victory.png" id="9_5av2h"]
+[ext_resource type="AudioStream" uid="uid://dbny3ydkn7i44" path="res://asset/song/8-Bit-Punch-Snare-chosic.com_.mp3" id="11_h8dnu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r1w7s"]
 atlas = ExtResource("2_l301r")
@@ -293,5 +294,9 @@ shape = SubResource("RectangleShape2D_567ah")
 [node name="Punch" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(140, -85)
 shape = SubResource("RectangleShape2D_6jlcq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_h8dnu")
+volume_db = -10.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

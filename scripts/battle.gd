@@ -33,5 +33,4 @@ func SpawnChosenCharacters():
 
 
 func _on_end_reload():
-	print("baise ta mere")
 	get_tree().reload_current_scene()

@@ -209,9 +209,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8id2b")
 }],
-"loop": true,
+"loop": false,
 "name": &"Idle",
-"speed": 8.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -314,7 +314,7 @@ script = ExtResource("1_imqxj")
 texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_eekc1")
-animation = &"Blocking"
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(6, 9)

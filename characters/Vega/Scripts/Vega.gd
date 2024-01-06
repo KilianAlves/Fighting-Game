@@ -76,7 +76,6 @@ func _process(delta):
 		print("can attack !")
 		can_attack = true
 
-
 #Jump 
 
 func get_input_velocity() -> float:

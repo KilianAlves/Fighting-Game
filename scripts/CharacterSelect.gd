@@ -16,11 +16,13 @@ var choice
 @onready var gridContainer = get_parent().get_node("GridContainer")   # Get the Gridcontainer
 
 func _ready():
-	$"../SpriteSelector".hide()
+	$"../../Player".hide()
+	$"../../Opponent".hide()
 # Get all of the characters stored within the group "Characters" and place them in the Array characters
 	for nameOfCharacter in get_tree().get_nodes_in_group("Characters"):
 		characters.append(nameOfCharacter)
-#	print(characters)
+	characters.append($"../GridContainer/TextureRect")
+	print(characters)
 	texture = player1Text
 	
 func _process(delta):
@@ -64,21 +66,27 @@ func _process(delta):
 			currentSelected = characters.size() - 1
 		else:
 			position.x -= portraitOffset.x
-			
-	
+	if texture == player1Text and characters[currentSelected].name != "TextureRect":
+		$"../../Player".show()
+		$"../../Player".play(characters[currentSelected].name)
+	elif texture == player2Text and characters[currentSelected].name != "TextureRect":
+		$"../../Opponent".show()
+		$"../../Opponent".play(characters[currentSelected].name)
+
 	# If a selection is made send it to the Signleton CharacterSelectionManager.gd to store that value
-	if(Input.is_action_just_pressed("ui_accept")):
+	if(Input.is_action_just_pressed("ui_accept") and characters[currentSelected].name != "TextureRect"):
 		if(CharacterSelectionManager.player == null):
 			CharacterSelectionManager.player = CharacterSelectionManager.selectableCharacters[characters[currentSelected].name]
 			CharacterSelectionManager.player_name = characters[currentSelected].name
 			texture = player2Text
 			SpriteSelector.changeSprite(characters[currentSelected].name)
-			$"../SpriteSelector".show()
 			print(characters[currentSelected].name)
+			$"../../Player".play(characters[currentSelected].name)
 #			if(characters[currentSelected].name == "Sagat"):
 #				$"../../CharacterBody2D".show()
 			
 		else:
 			CharacterSelectionManager.opponent = CharacterSelectionManager.selectableCharacters[characters[currentSelected].name]
 			CharacterSelectionManager.opponent_name = characters[currentSelected].name
+			$"../../Opponent".play(characters[currentSelected].name)
 			get_tree().change_scene_to_file("res://scenes/battle.tscn")

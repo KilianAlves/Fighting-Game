@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://vc1oac3lnpdk"]
+[gd_scene load_steps=13 format=3 uid="uid://vc1oac3lnpdk"]
 
 [ext_resource type="Texture2D" uid="uid://b3t2aj248cffs" path="res://asset/background/CharacterSelection.jpg" id="1_kybs6"]
 [ext_resource type="Texture2D" uid="uid://c7kklegfal4sc" path="res://asset/Selection/Sagat.png" id="2_qn12g"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dxhto6bbw8eey" path="res://asset/SelectionScreen/SelectorPlayer1.png" id="7_55ce0"]
 [ext_resource type="Script" path="res://scripts/Manager/SpriteSelector.gd" id="10_8yenj"]
 [ext_resource type="Texture2D" uid="uid://6gfyis1chdfs" path="res://asset/SpriteSelector/Sagat-removebg-preview.png" id="11_5tk8y"]
+[ext_resource type="AudioStream" uid="uid://d013e74fs71fe" path="res://asset/song/kim-lightyear-legends-109307.mp3" id="12_my6l1"]
 
 [node name="CharacterSelect" type="Node"]
 
@@ -104,3 +105,7 @@ position = Vector2(233, 318)
 scale = Vector2(3, 3)
 script = ExtResource("10_8yenj")
 Sagat = ExtResource("11_5tk8y")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_my6l1")
+autoplay = true

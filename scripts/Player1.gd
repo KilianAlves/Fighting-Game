@@ -64,6 +64,7 @@ func _process(delta):
 			PLayer.J1_Dmg = false
 		if can_attack  and Input.is_action_just_pressed("L.Punch_1") and attack_cooldown_timer <= 0.0:
 			$Area2D/Punch.disabled = false
+			
 			_animation_player.play("L.Punch")
 			is_attacking = true
 			can_attack = false
@@ -99,6 +100,7 @@ func _process(delta):
 		
 func _on_area_2d_body_entered(body):
 	if !PLayer.J2_IsBlocking:
+		$AudioStreamPlayer2D.play()
 		PLayer.J2_TakeDmg()
 	
 

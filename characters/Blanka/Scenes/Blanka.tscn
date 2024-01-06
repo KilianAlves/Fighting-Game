@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bthx1tdgihwv7"]
+[gd_scene load_steps=45 format=3 uid="uid://bthx1tdgihwv7"]
 
 [ext_resource type="Texture2D" uid="uid://seo7uf3gj3g1" path="res://characters/Blanka/Assets/Idle.png" id="1_cw1kh"]
 [ext_resource type="Texture2D" uid="uid://b53ey06wu3bqd" path="res://characters/Blanka/Assets/Block.png" id="1_i3dn0"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cymlce6knrf1b" path="res://characters/Blanka/Assets/LPunch.png" id="3_bitbp"]
 [ext_resource type="Texture2D" uid="uid://cdpohw0n3eqem" path="res://characters/Blanka/Assets/Jump.png" id="3_d8ioe"]
 [ext_resource type="Texture2D" uid="uid://bv6o348oi52np" path="res://characters/Blanka/Assets/Victory.PNG" id="6_nw38d"]
+[ext_resource type="AudioStream" uid="uid://dn647sv4fee8v" path="res://asset/song/8-Bit-Punch-Snare-chosic.com_.mp3" id="9_urxsx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ss7di"]
 atlas = ExtResource("1_i3dn0")
@@ -302,3 +303,6 @@ debug_color = Color(0.360784, 0.482353, 1, 0.309804)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Punch" type="CollisionShape2D" parent="Area2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_urxsx")

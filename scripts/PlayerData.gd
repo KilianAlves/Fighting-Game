@@ -4,7 +4,7 @@ var player1
 
 var player2
 
-var isPlayer2AI = true
+var isPlayer2AI = false
 
 func flip(player: Node):
 	player.scale.x *= -1

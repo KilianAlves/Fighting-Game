@@ -4,6 +4,7 @@ extends Node
 @onready var givenOpponent = CharacterSelectionManager.opponent.instantiate() 
 
 func _ready():
+	PLayer.end = false
 #	print(CharacterSelectionManager.player1Character)
 	SpawnChosenCharacters()
 
@@ -29,3 +30,8 @@ func SpawnChosenCharacters():
 		PlayerData.player2 = givenOpponent.name
 
 	call_deferred("add_child", givenOpponent, true)
+
+
+func _on_end_reload():
+	print("baise ta mere")
+	get_tree().reload_current_scene()

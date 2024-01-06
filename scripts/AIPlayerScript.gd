@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var finish = false
 #Integer
 @export var offsetTillFlip = 20  # How much overlap until the AI will flip
 @export var AIMovementSpeed = 300  # How fast can the AI move
@@ -30,48 +31,62 @@ var attackStartIndex = 2
 
 
 func _ready():
+	PLayer.J2_IsBlocking = false
+	animTree.play("Idle")
+	finish = false
 	$Area2D/Punch.disabled = true
 	move_and_slide()
 	countDown = maxTimeTillChoice
 
 func _process(delta):
-	if not is_on_floor():
-		velocity.y += gravity * delta
+	if PLayer.end == true:
+		if !PLayer.PlayerWin and finish == false:
+			animTree.play("Victory")
+			finish = true
+		elif PLayer.PlayerWin and finish == false:
+			animTree.play("Death")
+			finish = true
+	else :
+		if PLayer.J2_Dmg == true:
+			animTree.play("Hit")
+			PLayer.J2_Dmg = false
+		if not is_on_floor():
+			velocity.y += gravity * delta
+			
+		if is_on_floor():
+			is_jumping = false
 		
-	if is_on_floor():
-		is_jumping = false
-	
-	countDown -= delta
-	if(countDown < 0):
-		_choose_action()
-	_face_player()  # Make sure the AI always faces the player
+		countDown -= delta
+		if(countDown < 0):
+			_choose_action()
+		_face_player()  # Make sure the AI always faces the player
 
-	# Start moving
-	var generator = RandomNumberGenerator.new()
-	generator.randomize()
-	var value = generator.randi_range(0, 100)
-	
-	if(startMoving && time > 0):
-		# if value inferior to 90 then he walk forward
-		if (value < 95):
-			# if he isn't walkiing backward then he wove forward
-			if (!backwardWalk):
-				_move_AI(delta)
-				# if not we generate random value to 
-			else:
-				var quitBackwardPourcent = 90
-				var backwardPourcent = generator.randi_range(0,100)
-				if (backwardPourcent >= quitBackwardPourcent):
-					backwardWalk = false
+		# Start moving
+		var generator = RandomNumberGenerator.new()
+		generator.randomize()
+		var value = generator.randi_range(0, 100)
+		
+		if(startMoving && time > 0):
+			# if value inferior to 90 then he walk forward
+			if (value < 95):
+				# if he isn't walkiing backward then he wove forward
+				if (!backwardWalk):
+					_move_AI(delta)
+					# if not we generate random value to 
 				else:
-					_move_AI_reverse(delta)
+					var quitBackwardPourcent = 90
+					var backwardPourcent = generator.randi_range(0,100)
+					if (backwardPourcent >= quitBackwardPourcent):
+						backwardWalk = false
+					else:
+						_move_AI_reverse(delta)
+			else:
+				backwardWalk = true
+				_move_AI_reverse(delta)
+			time -= delta
 		else:
-			backwardWalk = true
-			_move_AI_reverse(delta)
-		time -= delta
-	else:
-		startMoving = false
-		time = maxMoveTime
+			startMoving = false
+			time = maxMoveTime
 
 func _choose_action():
 	var percentagePerStep = float(100) / float(maxDistance) # Get the percentage increase with each step
@@ -135,4 +150,5 @@ func _move_AI_reverse(delta):
 	move_and_slide()
 	
 func _on_area_2d_body_entered(body):
-	PLayer.J1_TakeDmg()
+	if !PLayer.J1_IsBlocking :
+		PLayer.J1_TakeDmg()

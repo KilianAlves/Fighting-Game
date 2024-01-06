@@ -137,7 +137,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r1w7s")
 }],
-"loop": true,
+"loop": false,
 "name": &"Blocking",
 "speed": 5.0
 }, {
@@ -282,9 +282,7 @@ script = ExtResource("1_8s0v1")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wbogb")
-animation = &"Hit"
-frame = 2
-frame_progress = 1.0
+animation = &"Blocking"
 
 [node name="VegaCollision" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 22)

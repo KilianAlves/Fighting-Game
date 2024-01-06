@@ -26,6 +26,7 @@ grow_vertical = 0
 theme = ExtResource("1_t3tt8")
 
 [node name="Player" type="Label" parent="Panel"]
+layout_mode = 0
 offset_left = 624.0
 offset_top = 29.0
 offset_right = 1052.0

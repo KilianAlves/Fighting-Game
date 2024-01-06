@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
-const JUMP_VELOCITY = -800.0
+const JUMP_VELOCITY = -600.0
 
 var disableColl = true
 var finish = false
@@ -59,6 +59,9 @@ func _process(delta):
 			_animation_player.play("Death")
 			finish = true
 	else :
+		if PLayer.J1_Dmg == true:
+			_animation_player.play("Hit")
+			PLayer.J1_Dmg = false
 		if can_attack  and Input.is_action_just_pressed("L.Punch_1") and attack_cooldown_timer <= 0.0:
 			$Area2D/Punch.disabled = false
 			_animation_player.play("L.Punch")
@@ -68,7 +71,13 @@ func _process(delta):
 		if Input.is_action_just_released("L.Punch_1"):
 			$Area2D/Punch.disabled = true
 			print($Area2D/Punch.is_disabled())
-		
+			
+		if Input.is_action_pressed("Guard_1") and !is_walking:
+			_animation_player.play("Blocking")
+			PLayer.J1_IsBlocking = true
+		else :
+			PLayer.J1_IsBlocking = false
+			
 		if Input.is_action_pressed("UP_1"):
 			if _animation_player.is_playing() and is_jumping:
 				_animation_player.play("Jump")
@@ -89,6 +98,7 @@ func _process(delta):
 			_animation_player.play("Idle")
 		
 func _on_area_2d_body_entered(body):
-	PLayer.J2_TakeDmg()
+	if !PLayer.J2_IsBlocking:
+		PLayer.J2_TakeDmg()
 	
 

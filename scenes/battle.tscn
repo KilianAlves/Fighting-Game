@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://7h0gs55yno5n" path="res://asset/background/StreetFighterII-SMS-USAGuile.png" id="1_njick"]
 [ext_resource type="Script" path="res://scripts/battle.gd" id="1_vrh7i"]
-[ext_resource type="PackedScene" uid="uid://cv85ubs7wlyj5" path="res://scenes/GUI.tscn" id="3_1oab6"]
+[ext_resource type="PackedScene" path="res://scenes/GUI.tscn" id="3_1oab6"]
 [ext_resource type="PackedScene" uid="uid://uaov5r3miphv" path="res://scenes/End.tscn" id="4_qm42q"]
 [ext_resource type="AudioStream" uid="uid://c5i8soqbm275r" path="res://asset/song/2021-08-30_-_Boss_Time_-_www.FesliyanStudios.com.mp3" id="5_76b4j"]
 [ext_resource type="AudioStream" uid="uid://btqn8xyhm14oc" path="res://asset/song/FWRUZBU-announcer-saying-fight.mp3" id="6_urrjb"]

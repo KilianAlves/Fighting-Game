@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://jawwu2c7yotp" path="res://asset/font/Lightyear Design.ttf" id="3_33s2h"]
 [ext_resource type="FontFile" uid="uid://b2nht5i21d6mr" path="res://asset/font/Neon Energy x.ttf" id="3_vx33a"]
 [ext_resource type="FontFile" uid="uid://cryuuksx43xes" path="res://asset/font/Neon Energy x.otf" id="4_hif8o"]
-[ext_resource type="AudioStream" uid="uid://bjfdc2ojs67ki" path="res://asset/song/chiptune-grooving-142242.mp3" id="7_fbdd8"]
+[ext_resource type="AudioStream" uid="uid://cwpqpgva2dogd" path="res://asset/song/chiptune-grooving-142242.mp3" id="7_fbdd8"]
 
 [sub_resource type="GDScript" id="GDScript_4wy1v"]
 

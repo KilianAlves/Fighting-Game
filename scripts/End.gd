@@ -9,7 +9,7 @@ func _ready():
 
 func _on_replay_pressed():
 	restart()
-	get_tree().change_scene_to_file("res://scenes/character_select.tscn")
+	get_tree().change_scene_to_file("res://scenes/mode_select.tscn")
 
 
 func _on_quit_pressed():

@@ -282,8 +282,8 @@ script = ExtResource("1_8s0v1")
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_wbogb")
-animation = &"Hit"
-frame = 2
+animation = &"Death"
+frame = 3
 frame_progress = 1.0
 
 [node name="VegaCollision" type="CollisionShape2D" parent="."]

@@ -4,6 +4,7 @@ extends Node
 @onready var givenOpponent = CharacterSelectionManager.opponent.instantiate() 
 
 func _ready():
+	PLayer.end = false
 #	print(CharacterSelectionManager.player1Character)
 	SpawnChosenCharacters()
 

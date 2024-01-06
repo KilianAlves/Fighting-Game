@@ -17,6 +17,7 @@ func _on_quit_pressed():
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	
 func _on_canvas_layer_end():
+	PLayer.end = true
 	print(CharacterSelectionManager.player_name)
 	if PLayer.PlayerWin:
 		PanPlayer.text = CharacterSelectionManager.player_name

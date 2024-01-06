@@ -31,6 +31,8 @@ var attackStartIndex = 2
 
 
 func _ready():
+	PLayer.J2_IsBlocking = false
+	animTree.play("Idle")
 	finish = false
 	$Area2D/Punch.disabled = true
 	move_and_slide()
@@ -45,6 +47,9 @@ func _process(delta):
 			animTree.play("Death")
 			finish = true
 	else :
+		if PLayer.J2_Dmg == true:
+			animTree.play("Hit")
+			PLayer.J2_Dmg = false
 		if not is_on_floor():
 			velocity.y += gravity * delta
 			
@@ -145,4 +150,5 @@ func _move_AI_reverse(delta):
 	move_and_slide()
 	
 func _on_area_2d_body_entered(body):
-	PLayer.J1_TakeDmg()
+	if !PLayer.J1_IsBlocking :
+		PLayer.J1_TakeDmg()

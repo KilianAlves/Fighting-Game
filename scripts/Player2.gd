@@ -62,7 +62,6 @@ func _process(delta):
 	else :
 		if PLayer.J2_Dmg == true:
 			_animation_player.play("Hit")
-			velocity.x = 0
 			PLayer.J2_Dmg = false
 	
 		if can_attack  and Input.is_action_just_pressed("L.Punch_2") and attack_cooldown_timer <= 0.0:

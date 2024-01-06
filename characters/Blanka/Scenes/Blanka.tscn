@@ -65,21 +65,21 @@ region = Rect2(142, 0, 71, 112)
 atlas = ExtResource("3_d8ioe")
 region = Rect2(213, 0, 71, 112)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uimdk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jks0"]
 atlas = ExtResource("3_bitbp")
-region = Rect2(0, 0, 177, 250)
+region = Rect2(0, 0, 112, 140)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oqely"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bhmt"]
 atlas = ExtResource("3_bitbp")
-region = Rect2(177, 0, 177, 250)
+region = Rect2(112, 0, 112, 140)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xun7t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gcrb"]
 atlas = ExtResource("3_bitbp")
-region = Rect2(354, 0, 177, 250)
+region = Rect2(224, 0, 112, 140)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2efx5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h7wp"]
 atlas = ExtResource("3_bitbp")
-region = Rect2(531, 0, 177, 250)
+region = Rect2(336, 0, 112, 140)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0ki7"]
 atlas = ExtResource("6_nw38d")
@@ -161,7 +161,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_moqgy")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 5.0
 }, {
@@ -172,7 +172,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qify7")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hit",
 "speed": 25.0
 }, {
@@ -212,16 +212,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uimdk")
+"texture": SubResource("AtlasTexture_2jks0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oqely")
+"texture": SubResource("AtlasTexture_6bhmt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xun7t")
+"texture": SubResource("AtlasTexture_1gcrb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2efx5")
+"texture": SubResource("AtlasTexture_0h7wp")
 }],
 "loop": false,
 "name": &"L.Punch",
@@ -292,9 +292,7 @@ size = Vector2(57.5625, 87.25)
 texture_filter = 1
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_743e1")
-animation = &"Jump"
-frame = 3
-frame_progress = 1.0
+animation = &"Death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3, 3)

@@ -7,6 +7,10 @@
 - Robion Alban 
 - Hureaux Lucas
 
+### Executable :
+
+Le jeu dispose d'un executable !
+
 ### Touches :
 
 #### Joueur 1 :

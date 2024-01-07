@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://dlapi1spve5g3"]
+[gd_scene load_steps=62 format=3 uid="uid://dlapi1spve5g3"]
 
 [ext_resource type="Script" path="res://characters/Feilong/Scene/Feilong.gd" id="1_18una"]
 [ext_resource type="Texture2D" uid="uid://lq830821ni24" path="res://characters/Feilong/Assets/Block-removebg-preview.png" id="2_3dosw"]
@@ -10,14 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://0gmjhi28xb30" path="res://characters/Feilong/Assets/Walk-removebg-preview.png" id="5_t6u75"]
 [ext_resource type="Texture2D" uid="uid://dly4nao8k2dch" path="res://characters/Feilong/Assets/punch-removebg-preview.png" id="6_bvq72"]
 [ext_resource type="Texture2D" uid="uid://deaksa28o0nrt" path="res://characters/Feilong/Assets/Victory-removebg-preview.png" id="9_wbr63"]
+[ext_resource type="AudioStream" uid="uid://bem8eje51qp6k" path="res://asset/song/8-Bit-Punch-Snare-chosic.com_.mp3" id="11_nei3u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ufuww"]
 atlas = ExtResource("2_3dosw")
 region = Rect2(0, 0, 53, 86)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w38ci"]
-atlas = ExtResource("2_3dosw")
-region = Rect2(53, 0, 53, 86)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17a42"]
 atlas = ExtResource("2_13d3m")
@@ -208,12 +205,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ufuww")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w38ci")
 }],
-"loop": true,
-"name": &"Block",
+"loop": false,
+"name": &"Blocking",
 "speed": 5.0
 }, {
 "frames": [{
@@ -243,7 +237,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8gg85")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 5.0
 }, {
@@ -257,9 +251,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k323q")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hit",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -314,7 +308,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Jump",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -329,9 +323,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iqxia")
 }],
-"loop": true,
-"name": &"Punch",
-"speed": 5.0
+"loop": false,
+"name": &"L.Punch",
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -370,9 +364,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tvr2g")
 }],
-"loop": true,
+"loop": false,
 "name": &"Victory",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -392,7 +386,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Walk",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yx234"]
@@ -410,8 +404,7 @@ texture_filter = 1
 position = Vector2(2, 0)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_rf4gy")
-animation = &"Victory"
-frame_progress = 0.935177
+animation = &"L.Punch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -0.5)
@@ -423,5 +416,8 @@ shape = SubResource("RectangleShape2D_yx234")
 [node name="Punch" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(106, -28)
 shape = SubResource("RectangleShape2D_81yyq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_nei3u")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" path="res://characters/Bison/Bison.gd" id="1_8204u"]
 [ext_resource type="Texture2D" uid="uid://ckgshyh64odvs" path="res://characters/Bison/Asset/Idle.png" id="1_setm8"]
-[ext_resource type="Texture2D" uid="uid://p4af6lbv42cx" path="res://characters/Bison/Asset/blocking.png" id="1_wlsl2"]
-[ext_resource type="Texture2D" uid="uid://d2ibmpv07n5v0" path="res://characters/Bison/Asset/Death.png" id="2_44i47"]
+[ext_resource type="Texture2D" uid="uid://lem4ssc6634g" path="res://characters/Bison/Asset/blocking.png" id="1_wlsl2"]
+[ext_resource type="Texture2D" uid="uid://c08qsu7yfylei" path="res://characters/Bison/Asset/Death.png" id="2_44i47"]
 [ext_resource type="Texture2D" uid="uid://c6ymqu6rfb3kx" path="res://characters/Bison/Asset/LPunch.png" id="2_v67vm"]
-[ext_resource type="Texture2D" uid="uid://bw0wht2rwv7j0" path="res://characters/Bison/Asset/Death2.png" id="3_e5yvi"]
+[ext_resource type="Texture2D" uid="uid://ctlpy41pae0eu" path="res://characters/Bison/Asset/Death2.png" id="3_e5yvi"]
 [ext_resource type="Texture2D" uid="uid://buihkx6mdr58c" path="res://characters/Bison/Asset/Walk.png" id="3_i7j5u"]
-[ext_resource type="Texture2D" uid="uid://ditmciojb4hin" path="res://characters/Bison/Asset/Hit.png" id="4_3fjif"]
+[ext_resource type="Texture2D" uid="uid://dj0n10kyyg4ar" path="res://characters/Bison/Asset/Hit.png" id="4_3fjif"]
 [ext_resource type="Texture2D" uid="uid://cpmi1147ydifb" path="res://characters/Bison/Asset/Jump.png" id="6_t8mlc"]
-[ext_resource type="Texture2D" uid="uid://cv2g5iwu0duay" path="res://characters/Bison/Asset/Victory.png" id="8_1y7um"]
-[ext_resource type="AudioStream" uid="uid://c8krcmak402jq" path="res://asset/song/8-Bit-Punch-Snare-chosic.com_.mp3" id="10_cjs75"]
+[ext_resource type="Texture2D" uid="uid://dpyidbfxanmpt" path="res://characters/Bison/Asset/Victory.png" id="8_1y7um"]
+[ext_resource type="AudioStream" uid="uid://bem8eje51qp6k" path="res://asset/song/8-Bit-Punch-Snare-chosic.com_.mp3" id="10_cjs75"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jv3r"]
 atlas = ExtResource("1_wlsl2")
@@ -128,7 +128,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("4_3fjif")
 }],
-"loop": true,
+"loop": false,
 "name": &"Hit",
 "speed": 5.0
 }, {
@@ -228,7 +228,7 @@ script = ExtResource("1_8204u")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_s28b1")
-animation = &"Victory"
+animation = &"Hit"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
